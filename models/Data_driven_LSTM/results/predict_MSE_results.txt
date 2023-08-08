@@ -1,0 +1,12 @@
+Data-driven LSTM
+
+2023-08-05 13:32:39
+MSE when predicting multi steps acceleration: 0.10111075989635705
+MSE when predicting first acceleration: 0.01222072633688313
+
+使用修改后的数据，删去了a_IDM_2<-3.5的sample
+
+2023-08-06 19:21:19
+MSE when predicting multi steps acceleration: 0.07201691503938926
+MSE when predicting first acceleration: 0.013538783324683005
+
