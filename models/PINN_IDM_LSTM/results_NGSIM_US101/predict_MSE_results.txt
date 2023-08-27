@@ -1,0 +1,184 @@
+2023-08-26 00:55:37
+MSE when predicting multi steps acceleration: 0.20250202364434783
+MSE when predicting first acceleration: 0.4646293205374296
+
+2023-08-26 01:02:39
+MSE when predicting multi steps acceleration: 0.08286406061429333
+MSE when predicting first acceleration: 0.022289648584674103
+
+2023-08-26 13:18:52
+MSE when predict multi-step a: 5.09438
+MSE when predict first a: 0.02202
+MSE when predict multi-step v: 0.05052
+MSE when predict first v: 0.01738
+MSE when predict multi-step y: 11.91616
+MSE when predict first y: 0.00047
+
+2023-08-26 13:26:40
+不同的idm层initializer值
+MSE when predict multi-step a: 1.56749
+MSE when predict first a: 0.12176
+MSE when predict multi-step v: 0.23370
+MSE when predict first v: 0.00142
+MSE when predict multi-step y: 132.59923
+MSE when predict first y: 0.00004
+
+2023-08-26 13:32:21
+不同的idm层initializer值
+MSE when predict multi-step a: 0.17747
+MSE when predict first a: 0.06528
+MSE when predict multi-step v: 0.00157
+MSE when predict first v: 0.00072
+MSE when predict multi-step y: 0.00003
+MSE when predict first y: 0.00002
+
+2023-08-26 13:37:07
+不同的idm层initializer值
+MSE when predict multi-step a: 2.63707
+MSE when predict first a: 0.10233
+MSE when predict multi-step v: 0.02627
+MSE when predict first v: 0.00107
+MSE when predict multi-step y: 0.00034
+MSE when predict first y: 0.00002
+
+不设置idm层initializer
+
+2023-08-26 16:13:22
+MSE when predict multi-step a: 5.14202
+MSE when predict first a: 0.09246
+MSE when predict multi-step v: 0.05123
+MSE when predict first v: 0.00097
+MSE when predict multi-step y: 0.00103
+MSE when predict first y: 0.00036
+
+2023-08-26 16:33:04
+IDM parameters trained result vf, A, b, s0, T = 26.865207672119142.9811680316925055.1093893051147462.66294598579406740.5547289252281189
+
+2023-08-26 20:56:26
+IDM parameters trained result vf, A, b, s0, T = 26.738430023193362.9899783134460455.1122374534606932.6993734836578370.6080191135406494
+2023-08-26 21:28:36
+MSE when predict multi-step a: 12.55917
+MSE when predict first a: 12.67996
+MSE when predict multi-step v: 0.11322
+MSE when predict first v: 0.12658
+MSE when predict multi-step y: 0.00226
+MSE when predict first y: 0.00284
+
+2023-08-26 21:31:57
+MSE when predict multi-step a: 12.55917
+MSE when predict first a: 12.67996
+MSE when predict multi-step v: 0.11322
+MSE when predict first v: 0.12658
+MSE when predict multi-step y: 0.00226
+MSE when predict first y: 0.00284
+
+2023-08-26 21:34:19
+IDM parameters trained result vf, A, b, s0, T = 26.751678466796875
+3.031991958618164
+5.062725067138672
+2.7079110145568848
+0.608157217502594
+
+2023-08-26 21:38:46
+IDM parameters trained result vf, A, b, s0, T = 26.754148483276367
+3.032045841217041
+5.062755584716797
+2.707021951675415
+0.6070927381515503
+
+2023-08-26 21:45:11
+MSE when predict multi-step a: 12.61213
+MSE when predict first a: 12.55718
+MSE when predict multi-step v: 0.12535
+MSE when predict first v: 0.14147
+MSE when predict multi-step y: 11.91613
+MSE when predict first y: 0.00298
+
+2023-08-26 21:49:59
+IDM parameters trained result vf, A, b, s0, T = 26.72423553466797
+2.0424511432647705
+3.8489432334899902
+1.8232909440994263
+0.6984838843345642
+
+2023-08-26 22:01:27
+MSE when predict multi-step a: 12.61213
+MSE when predict first a: 12.55718
+MSE when predict multi-step v: 0.12535
+MSE when predict first v: 0.14147
+MSE when predict multi-step y: 11.91613
+MSE when predict first y: 0.00298
+
+2023-08-26 22:09:24
+IDM parameters trained result vf, A, b, s0, T = 24.04241371154785
+0.4860035181045532
+9.943941116333008
+0.3619804382324219
+0.14098818600177765
+
+2023-08-26 22:10:53
+MSE when predict multi-step a: 1.31546
+MSE when predict first a: 0.01284
+MSE when predict multi-step v: 0.02563
+MSE when predict first v: 0.01730
+MSE when predict multi-step y: 11.91680
+MSE when predict first y: 0.00017
+
+2023-08-26 22:30:51
+IDM parameters trained result vf, A, b, s0, T = 24.205896377563477
+0.5462234020233154
+7.853797435760498
+0.9054272770881653
+0.08672831952571869
+
+2023-08-26 22:33:58
+MSE when predict multi-step a: 0.05856
+MSE when predict first a: 0.01074
+MSE when predict multi-step v: 0.01315
+MSE when predict first v: 0.01730
+MSE when predict multi-step y: 11.91686
+MSE when predict first y: 0.00017
+
+2023-08-26 22:47:09
+IDM parameters trained result vf, A, b, s0, T = 29.996374130249023
+0.5236424207687378
+0.03524039313197136
+0.0
+1.0
+
+2023-08-26 22:49:22
+MSE when predict multi-step a: 0.05772
+MSE when predict first a: 0.01027
+MSE when predict multi-step v: 0.01314
+MSE when predict first v: 0.01731
+MSE when predict multi-step y: 11.91680
+MSE when predict first y: 0.00017
+
+2023-08-27 01:01:15
+IDM parameters trained result vf, A, b, s0, T = 27.593109130859375
+0.15383051335811615
+3.6570353507995605
+1.3910768032073975
+1.0
+
+2023-08-27 01:38:10
+IDM parameters trained result vf, A, b, s0, T = 27.626529693603516
+0.11323179304599762
+3.6553666591644287
+1.384605884552002
+1.0
+
+2023-08-27 01:48:04
+IDM parameters trained result vf, A, b, s0, T = 27.628707885742188
+0.018851039931178093
+3.6389577388763428
+1.3683772087097168
+1.0
+
+2023-08-27 01:59:01
+IDM parameters trained result vf, A, b, s0, T = 27.780414581298828
+0.019600894302129745
+3.5794641971588135
+1.3261018991470337
+1.0
+

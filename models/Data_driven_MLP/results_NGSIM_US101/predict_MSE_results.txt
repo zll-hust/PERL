@@ -1,0 +1,8 @@
+2023-08-09 23:52:35
+MSE when predict multi-step a: 0.08228
+MSE when predict first a: 0.04611
+MSE when predict multi-step v: 0.01323
+MSE when predict first v: 0.01765
+MSE when predict multi-step y: 11.91632
+MSE when predict first y: 0.00018
+

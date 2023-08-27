@@ -1,50 +1,55 @@
 import numpy as np
 from keras.models import Sequential, load_model
 from keras.layers import Dense
-from keras.callbacks import Callback
+from tensorflow.keras.callbacks import EarlyStopping
 from keras.utils.vis_utils import plot_model
-from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.optimizers import Adam, schedules
+import os
 import data as dt
 
 
-class ConvergenceChecker(Callback):
-    def __init__(self, patience=3, threshold=0.0001):
-        super(ConvergenceChecker, self).__init__()
-        self.patience = patience
-        self.threshold = threshold
-        self.loss_history = []
+DataName = "NGSIM_US101"
 
-    def on_epoch_end(self, epoch, logs=None):
-        logs = logs or {}
-        loss = logs.get('loss')
-        if loss:
-            self.loss_history.append(loss)
-            if len(self.loss_history) > self.patience and abs(
-                    loss - self.loss_history[-self.patience - 1]) < self.threshold:
-                print("Converged.")
-                self.model.stop_training = True
+
+def build_mlp_model(input_shape, output_units):
+    model = Sequential([
+        Dense(64, activation='relu', input_shape=input_shape),
+        Dense(32, activation='relu'),
+        Dense(output_units)
+    ])
+
+    return model
 
 
 if __name__ == '__main__':
     # 准备数据
-    train_x, _, train_y, _, _, _, _ = dt.load_data()
+    train_x, val_x, _, train_y, val_y, _, _, _, _ = dt.load_data()
 
-    # 构建 MLP 模型
-    model = Sequential([
-        Dense(128, activation='relu', input_shape=(train_x.shape[1],)),
-        Dense(128, activation='relu'),
-        Dense(train_y.shape[1])
-    ])
-    model.compile(optimizer=Adam(learning_rate=0.001), loss='mse')
-    print(model.input_shape)
-    print(model.output_shape)
+    # 加载模型
+    model = build_mlp_model((train_x.shape[1],), train_y.shape[1])
 
-    convergence_checker = ConvergenceChecker(patience=5, threshold=0.0001)
+    # 使用学习率衰减策略
+    lr_schedule = schedules.ExponentialDecay(initial_learning_rate=0.001,
+                                             decay_steps=400,
+                                             decay_rate=0.9)
+    optimizer = Adam(learning_rate=lr_schedule)
+    model.compile(optimizer=optimizer, loss='mse')
 
-    history = model.fit(train_x, train_y, epochs=50, batch_size=64, verbose=2, callbacks=[convergence_checker])
-    loss_history = convergence_checker.loss_history
+    # 添加早停策略
+    early_stopping = EarlyStopping(monitor='loss', patience=5, min_delta=0.00001, verbose=1)
 
-    model.save("./model/NGSIM.h5")
-    np.savetxt("./results/convergence_rate.csv", loss_history, delimiter=",")
+    # 保存收敛过程
+    history = model.fit(train_x, train_y,
+                        validation_data=(val_x, val_y),
+                        epochs=50, batch_size=64, verbose=2,
+                        callbacks=[early_stopping])
 
+    combined_loss_history = np.column_stack((history.history['loss'], history.history['val_loss']))
+    os.makedirs(f'./results_{DataName}', exist_ok=True)
+    np.savetxt(f"./results_{DataName}/convergence_rate.csv", combined_loss_history, delimiter=",", header="train_loss,val_loss")
+
+    # 保存模型
+    model.save(f"./model/{DataName}.h5")
+
+    # 保存模型结构图
     #plot_model(model, to_file='./results/model_structure PERL IDM_MLP.png', show_shapes=True, show_layer_names=True)

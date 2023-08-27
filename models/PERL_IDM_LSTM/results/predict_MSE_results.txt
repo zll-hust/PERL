@@ -1,6 +1,0 @@
-PERL(IDM+LSTM)
-
-2023-08-06 20:41:55
-MSE when predicting multi steps acceleration: 0.07165840015803505
-MSE when predicting first acceleration: 0.014410687409050169
-
